@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monjurul Haque Rajun | Full-Stack Developer • Security Researcher</title>
+  <meta name="description" content="Portfolio of Monjurul Haque Rajun — Full-Stack Developer, Security Researcher, CTF competitor and Agentic AI builder (LangGraph, CrewAI, React, Python)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310b981'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23000' font-family='sans-serif' font-weight='bold'>&lt;/&gt;</text></svg>">
+</head>
+<body>
+  <div id="progress"></div>
+  <div id="cursorGlow"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="logo"><span class="logo-mark">&lt;/&gt;</span> <span id="logoName">monjur0x0</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">CTF</a>
+        <a href="#certs">Certs</a>
+        <a href="#blog">Writeups</a>
+        <a href="#contact" class="btn-hire" data-magnetic><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>Hire Me</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div id="heroParticles"><canvas id="particles"></canvas></div>
+      <div class="hero-grid">
+        <div>
+          <div class="badge-terminal" data-hero style="--hd:.05s"><span class="pulse"></span> <span>Hackathon Champion • Active CTF competitor</span></div>
+          <h1 data-hero style="--hd:.15s">Hi, I'm <span class="grad" id="heroName">Monjurul Haque Rajun</span><br><span id="typed" class="typed"></span><span class="caret">▍</span></h1>
+          <p class="lead" id="heroTagline" data-hero style="--hd:.28s">CSE undergraduate (Uttara University) with hands-on cybersecurity + security tooling and multi-agent AI projects in Python, React, LangGraph & CrewAI.</p>
+          <div class="hero-cta" data-hero style="--hd:.4s">
+            <a href="#projects" class="btn btn-primary" data-magnetic>View Work →</a>
+            <a href="#contact" class="btn btn-ghost" data-magnetic>Contact Me</a>
+            <a href="resume.pdf" class="btn btn-outline" id="resumeBtn" data-magnetic target="_blank" rel="noopener"><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Resume</a>
+          </div>
+          <div class="hero-stats" data-hero style="--hd:.52s">
+            <div><strong data-count="8">0</strong><span>CTFs Competed</span></div>
+            <div><strong data-count="6">0</strong><span>Certifications</span></div>
+            <div><strong data-count="5">0</strong><span>Projects Shipped</span></div>
+          </div>
+          <div class="socials" data-hero style="--hd:.62s">
+            <a class="soc" href="https://github.com/monjur0x" target="_blank" rel="noopener" aria-label="GitHub"><img src="logos/github.svg" alt="GitHub" width="30" height="30"></a>
+            <a class="soc" href="https://linkedin.com/in/monjur0x0" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="logos/linkedin.svg" alt="LinkedIn" width="30" height="30"></a>
+            <a class="soc" href="https://codeforces.com/profile/monjurulh" target="_blank" rel="noopener" aria-label="Codeforces"><img src="logos/codeforces.svg" alt="Codeforces" width="30" height="30"></a>
+            <a class="soc" href="mailto:monjurul.r@uttarauniversity.edu.bd" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div class="terminal-wrap" data-hero style="--hd:.35s">
+          <div class="orb orb-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+          <div class="orb orb-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="15" y2="15"/><line x1="16" x2="16" y1="15" y2="15"/></svg></div>
+          <div class="orb orb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="terminal-card" data-tilt>
+            <div class="terminal-head"><i></i><i></i><i></i><span>monjur.py</span></div>
+<pre class="terminal-body"><code><span class="k">class</span> <span class="v">Monjur</span>:
+    school = <span class="s">'Uttara University CSE'</span>
+    grad = <span class="s">'Dec 2027'</span>
+    focus = [<span class="s">'security'</span>, <span class="s">'ctf'</span>,
+             <span class="s">'agentic-ai'</span>]
+    tools = [<span class="s">'Burp'</span>, <span class="s">'Nmap'</span>,
+             <span class="s">'Wireshark'</span>, <span class="s">'Kali'</span>]
+    ai = [<span class="s">'LangGraph'</span>, <span class="s">'CrewAI'</span>,
+          <span class="s">'n8n'</span>]
+
+    <span class="k">def</span> <span class="f">hireable</span>(<span class="b">self</span>):
+        <span class="k">return</span> <span class="b">True</span>  <span class="k"># open to work</span>
+</code></pre>
+            <div class="terminal-foot">
+              <span>● Dhaka, Bangladesh</span><span class="terminal-green">$ whoami → ctf-player</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-group"><span><b>●</b> Burp Suite</span><span><b>●</b> Nmap</span><span><b>●</b> Wireshark</span><span><b>●</b> Metasploit</span><span><b>●</b> Ghidra</span><span><b>●</b> Nuclei</span><span><b>●</b> Ffuf</span><span><b>●</b> LangGraph</span><span><b>●</b> CrewAI</span><span><b>●</b> n8n</span><span><b>●</b> React</span><span><b>●</b> Python</span></div><div class="marquee-group"><span><b>●</b> Burp Suite</span><span><b>●</b> Nmap</span><span><b>●</b> Wireshark</span><span><b>●</b> Metasploit</span><span><b>●</b> Ghidra</span><span><b>●</b> Nuclei</span><span><b>●</b> Ffuf</span><span><b>●</b> LangGraph</span><span><b>●</b> CrewAI</span><span><b>●</b> n8n</span><span><b>●</b> React</span><span><b>●</b> Python</span></div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container reveal">
+      <p class="eyebrow">About Me</p>
+      <h2>CSE × Security × <span class="grad">Agentic AI</span></h2>
+      <p class="sub">Uttara University B.Sc. CSE (Dec 2027) — security competitions + AI agent engineering.</p>
+      <div class="about-grid">
+        <div class="card reveal reveal-left" data-tilt>
+          <p>I'm <strong>Monjurul Haque Rajun</strong>, a Computer Science undergraduate with hands-on experience in <strong>cybersecurity competitions and security tooling</strong>, and a growing portfolio of <strong>multi-agent AI projects</strong> built with Python, React, and agentic frameworks.</p>
+          <p>Hackathon champion (Sondhanai — campus lost & found), 8× CTF competitor with national placements, and builder of LangGraph multi-agent systems. Comfortable across C/C++/C#/Java/Python, web stack, MySQL/SQLite, and Kali Linux tooling.</p>
+          <div class="chips">
+            <span>UU CSE Undergraduate</span><span>Dhaka, Bangladesh</span><span>monjurul.r@uttarauniversity.edu.bd</span><span>01821540717</span>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="mini-card reveal" style="--d:.05s"><h4><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>Education</h4><p>Uttara University — B.Sc. CSE, Dec 2027</p></div>
+          <div class="mini-card reveal" style="--d:.15s"><h4><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>Peak Wins</h4><p>Hackathon Champion • Intra CTF 3rd</p></div>
+          <div class="mini-card reveal" style="--d:.25s"><h4><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Security</h4><p>Burp • Nmap • Wireshark • Ghidra</p></div>
+          <div class="mini-card reveal" style="--d:.35s"><h4><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="15" y2="15"/><line x1="16" x2="16" y1="15" y2="15"/></svg>AI Agents</h4><p>LangGraph • CrewAI • n8n</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container reveal">
+      <p class="eyebrow">Technical Skills</p>
+      <h2>Arsenal, from your <span class="grad">resume</span></h2>
+      <p class="sub">Grouped exactly as listed — bars fill on scroll.</p>
+      <div class="grid-3" id="skillsGrid">
+        <div class="card skill reveal" style="--d:0s" data-tilt><div class="skill-logos"><img src="logos/c.svg" alt="C" width="30" height="30" loading="lazy"><img src="logos/cplusplus.svg" alt="C++" width="30" height="30" loading="lazy"><img src="logos/csharp.svg" alt="C#" width="30" height="30" loading="lazy"><img src="logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></div><h3>Languages</h3><p>C, C++, C#, Java, Python</p><div class="bar"><i data-w="88"></i></div></div>
+        <div class="card skill reveal" style="--d:.08s" data-tilt><div class="skill-logos"><img src="logos/html5.svg" alt="HTML5" width="30" height="30" loading="lazy"><img src="logos/css3.svg" alt="CSS3" width="30" height="30" loading="lazy"><img src="logos/javascript.svg" alt="JavaScript" width="30" height="30" loading="lazy"><img src="logos/react.svg" alt="React" width="30" height="30" loading="lazy"></div><h3>Web Development</h3><p>HTML, CSS, JavaScript, React, Node.js</p><div class="bar"><i data-w="82"></i></div></div>
+        <div class="card skill reveal" style="--d:.16s" data-tilt><div class="skill-logos"><img src="logos/mysql.svg" alt="MySQL" width="30" height="30" loading="lazy"><img src="logos/sqlite.svg" alt="SQLite" width="30" height="30" loading="lazy"></div><h3>Databases</h3><p>MySQL, SQLite</p><div class="bar"><i data-w="76"></i></div></div>
+        <div class="card skill reveal" style="--d:.24s" data-tilt><div class="skill-logos"><img src="logos/wireshark.svg" alt="Wireshark" width="30" height="30" loading="lazy"><img src="logos/burpsuite.svg" alt="Burp Suite" width="30" height="30" loading="lazy"><img src="logos/metasploit.svg" alt="Metasploit" width="30" height="30" loading="lazy"><img src="logos/kalilinux.svg" alt="Kali Linux" width="30" height="30" loading="lazy"></div><h3>Security Tools</h3><p>Wireshark, Burp Suite, Nmap, Metasploit, Ghidra, John, Ffuf, Nuclei, Kali</p><div class="bar"><i data-w="86"></i></div></div>
+        <div class="card skill reveal" style="--d:.32s" data-tilt><div class="skill-logos"><img src="logos/langchain.svg" alt="LangChain" width="30" height="30" loading="lazy"><img src="logos/openai.svg" alt="OpenAI" width="30" height="30" loading="lazy"><img src="logos/n8n.svg" alt="n8n" width="30" height="30" loading="lazy"><img src="logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></div><h3>AI & Automation</h3><p>LangGraph, CrewAI, n8n, Agentic Workflows</p><div class="bar"><i data-w="84"></i></div></div>
+        <div class="card skill reveal" style="--d:.4s" data-tilt><div class="skill-logos"><img src="logos/git.svg" alt="Git" width="30" height="30" loading="lazy"><img src="logos/github.svg" alt="GitHub" width="30" height="30" loading="lazy"><img src="logos/gnubash.svg" alt="Bash" width="30" height="30" loading="lazy"></div><h3>Ops</h3><p>Git, GitHub, Bash scripting</p><div class="bar"><i data-w="80"></i></div></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section container reveal">
+      <p class="eyebrow">Services</p>
+      <h2>What I <span class="grad">Do</span></h2>
+      <div class="grid-3">
+        <div class="card reveal" style="--d:0s" data-tilt><h3><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Security Testing Support</h3><p>Recon, web testing basics (Burp/Nmap/Nuclei/Ffuf), report writing. Learning in public via CTFs.</p><a href="#contact" class="link">Enquire →</a></div>
+        <div class="card reveal" style="--d:.12s" data-tilt><h3><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="15" y2="15"/><line x1="16" x2="16" y1="15" y2="15"/></svg>Agentic AI Apps</h3><p>LangGraph / CrewAI multi-agent workflows, Python backends, React frontends, n8n automation.</p><a href="#contact" class="link">Enquire →</a></div>
+        <div class="card reveal" style="--d:.24s" data-tilt><h3><svg class="h-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Web Development</h3><p>React + Node.js sites and dashboards, MySQL/SQLite, clean responsive UI.</p><a href="#contact" class="link">Enquire →</a></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container reveal">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected <span class="grad">Work</span></h2>
+      <p class="sub">From your resume — update links in <code>script.js → PROJECTS</code>.</p>
+      <div class="filter-row">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="Web">Web</button>
+        <button class="chip" data-filter="AI">Agentic AI</button>
+        <button class="chip" data-filter="Game">Games/Tools</button>
+      </div>
+      <div class="grid-3" id="projectsGrid"></div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section container reveal">
+      <p class="eyebrow">Competitions</p>
+      <h2>CTF & Hackathon <span class="grad">Record</span></h2>
+      <div class="grid-3">
+        <div class="card reveal" style="--d:0s" data-tilt><p class="post-date">Champion</p><h3>Intra-University Hackathon 2026</h3><p>Sondhanai — campus lost & found. 1st place among competing teams.</p></div>
+        <div class="card reveal" style="--d:.08s" data-tilt><p class="post-date">3rd Place</p><h3>Intra-University CTF</h3><p>Podium finish at home university CTF.</p></div>
+        <div class="card reveal" style="--d:.16s" data-tilt><p class="post-date">Top 10 National</p><h3>SMUCT CSE Fest CTF</h3><p>10th place nationally.</p></div>
+        <div class="card reveal" style="--d:.24s" data-tilt><p class="post-date">Top 12 National</p><h3>EWU RoboFest CTF</h3><p>12th place nationally.</p></div>
+        <div class="card reveal" style="--d:.32s" data-tilt><p class="post-date">Top 30 National</p><h3>NSU Cybernauts CTF</h3><p>30th place nationally.</p></div>
+        <div class="card reveal" style="--d:.4s" data-tilt><p class="post-date">Also competed</p><h3>HTB • Junior Crypt • Cybercon</h3><p>Hack The Box University CTF 2025, Junior Crypt 2026 CTF, Cybercon 25.</p></div>
+      </div>
+    </section>
+
+    <!-- CERTS -->
+    <section id="certs" class="section container reveal">
+      <p class="eyebrow">Certifications</p>
+      <h2>Verified <span class="grad">Credentials</span></h2>
+      <div class="grid-3">
+        <div class="card cert-card reveal" style="--d:0s" data-tilt><a href="certs/full/google-cybersecurity.pdf" target="_blank" rel="noopener"><img class="cert-img" src="certs/google.jpg" alt="Google Cybersecurity Professional Certificate" loading="lazy"></a><h3>Google Cybersecurity Pro</h3><p>Google / Coursera professional certificate.</p><a class="link" href="certs/full/google-cybersecurity.pdf" target="_blank" rel="noopener">View certificate →</a></div>
+        <div class="card cert-card reveal" style="--d:.08s" data-tilt><a href="certs/full/ccep.pdf" target="_blank" rel="noopener"><img class="cert-img" src="certs/ccep.png" alt="Certified Cybersecurity Educator Professional certificate" loading="lazy"></a><h3>CCEP</h3><p>Certified Cybersecurity Educator Professional — Red Team Leaders.</p><a class="link" href="certs/full/ccep.pdf" target="_blank" rel="noopener">View certificate →</a></div>
+        <div class="card cert-card reveal" style="--d:.16s" data-tilt><a href="certs/full/ehe.pdf" target="_blank" rel="noopener"><img class="cert-img" src="certs/ehe.png" alt="Ethical Hacking Essentials certificate" loading="lazy"></a><h3>Ethical Hacking Essentials</h3><p>EC-Council / edX.</p><a class="link" href="certs/full/ehe.pdf" target="_blank" rel="noopener">View certificate →</a></div>
+        <div class="card cert-card reveal" style="--d:.24s" data-tilt><a href="certs/full/htb.pdf" target="_blank" rel="noopener"><img class="cert-img" src="certs/htb.jpg" alt="Hack The Box University CTF 2025 certificate" loading="lazy"></a><h3>HTB University CTF 2025</h3><p>Hack The Box competition credential.</p><a class="link" href="certs/full/htb.pdf" target="_blank" rel="noopener">View certificate →</a></div>
+        <div class="card cert-card reveal" style="--d:.32s" data-tilt><a href="certs/full/thm.pdf" target="_blank" rel="noopener"><img class="cert-img" src="certs/thm.png" alt="TryHackMe Advent of Cyber 2025 certificate" loading="lazy"></a><h3>TryHackMe AoC 2025</h3><p>Advent of Cyber 2025 — 24 challenges completed.</p><a class="link" href="certs/full/thm.pdf" target="_blank" rel="noopener">View certificate →</a></div>
+        <div class="card cert-card reveal" style="--d:.4s" data-tilt><a href="certs/osint.jpg" target="_blank" rel="noopener"><img class="cert-img" src="certs/osint.jpg" alt="UK OSINT Community certification" loading="lazy"></a><h3>UK OSINT Community</h3><p>OSINT community certification.</p><a class="link" href="certs/osint.jpg" target="_blank" rel="noopener">View certificate →</a></div>
+      </div>
+    </section>
+
+    <!-- BLOG / WRITEUPS -->
+    <section id="blog" class="section container reveal">
+      <p class="eyebrow">Writeups</p>
+      <h2>Notes & <span class="grad">CTF Writeups</span></h2>
+      <div class="grid-3">
+        <article class="card reveal" style="--d:0s" data-tilt><p class="post-date">CTF • Web</p><h3>Burp to Shell: my checklist</h3><p>Recon → Ffuf → Nuclei → Burp intruder flow I reuse in every web challenge.</p><a class="link" href="#blog">Read →</a></article>
+        <article class="card reveal" style="--d:.12s" data-tilt><p class="post-date">AI • Agents</p><h3>LangGraph multi-agent 101</h3><p>How I structured engineering-team-aiagent: roles, tools, handoffs.</p><a class="link" href="#blog">Read →</a></article>
+        <article class="card reveal" style="--d:.24s" data-tilt><p class="post-date">Forensics • Tools</p><h3>Wireshark filters that win</h3><p>Display filters + OSINT pivots from Advent of Cyber practice.</p><a class="link" href="#blog">Read →</a></article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's Work <span class="grad">Together</span></h2>
+      <div class="contact-grid">
+        <div class="card reveal reveal-left" data-tilt>
+          <h3>Contact Info</h3>
+          <p class="c-line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span id="contactEmail">monjurul.r@uttarauniversity.edu.bd</span></p>
+          <p class="c-line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>01821540717</span></p>
+          <p class="c-line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Dhaka, Bangladesh — <a class="link" href="https://maps.google.com/?q=Dhaka,Bangladesh" target="_blank" rel="noopener">View map</a></span></p>
+          <div class="socials" style="margin-top:1rem"><a class="soc" href="https://github.com/monjur0x" target="_blank" rel="noopener" aria-label="GitHub"><img src="logos/github.svg" alt="GitHub" width="30" height="30"></a><a class="soc" href="https://linkedin.com/in/monjur0x0" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="logos/linkedin.svg" alt="LinkedIn" width="30" height="30"></a><a class="soc" href="https://codeforces.com/profile/monjurulh" target="_blank" rel="noopener" aria-label="Codeforces"><img src="logos/codeforces.svg" alt="Codeforces" width="30" height="30"></a><a class="soc" href="mailto:monjurul.r@uttarauniversity.edu.bd" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></div>
+          <p class="muted small">Uttara University — B.Sc. CSE, Dec 2027</p>
+        </div>
+        <form class="card form reveal reveal-right" id="contactForm">
+          <label>Name<input required name="name" placeholder="Your name" /></label>
+          <label>Email<input required type="email" name="email" placeholder="you@company.com" /></label>
+          <label>Message<textarea required name="message" rows="4" placeholder="CTF team invite, internship, or AI project..."></textarea></label>
+          <button class="btn btn-primary" type="submit" data-magnetic>Send Message</button>
+          <p class="muted small" id="formNote">Demo form — saved locally. Connect Formspree/Supabase for production.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-grid">
+      <div><strong><span class="logo-mark">&lt;/&gt;</span> monjur0x0</strong><p class="muted small">CSE • Security • Agentic AI. Original template code.</p></div>
+      <div><strong>Focus</strong><br><a href="#projects">Projects</a><br><a href="#achievements">CTFs</a><br><a href="#certs">Certs</a></div>
+      <div><strong>Links</strong><br><div class="socials" style="margin-top:.6rem"><a class="soc" href="https://github.com/monjur0x" target="_blank" rel="noopener" aria-label="GitHub"><img src="logos/github.svg" alt="GitHub" width="30" height="30"></a><a class="soc" href="https://linkedin.com/in/monjur0x0" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="logos/linkedin.svg" alt="LinkedIn" width="30" height="30"></a><a class="soc" href="https://codeforces.com/profile/monjurulh" target="_blank" rel="noopener" aria-label="Codeforces"><img src="logos/codeforces.svg" alt="Codeforces" width="30" height="30"></a></div><a href="#contact" style="display:inline-block;margin-top:.6rem">Contact →</a></div>
+    </div>
+    <p class="muted small center">© <span id="year"></span> Monjurul Haque Rajun. Built with HTML/CSS/JS.</p>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="config.js?v=3"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>
