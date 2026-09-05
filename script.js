@@ -17,10 +17,12 @@ const PROJECTS = [
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = matchMedia("(pointer: fine)").matches;
+// NOTE: top-level const in config.js does not attach to window, so read it lexically.
+const SITE = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG) || {};
 
 // Apply config
 (function () {
-  const c = window.SITE_CONFIG || {};
+  const c = SITE;
   if (c.name) {
     document.title = `${c.name} | Full-Stack Developer • Security Researcher`;
     const logo = document.getElementById("logoName"); if (logo) logo.textContent = c.shortName || c.name;
@@ -28,11 +30,12 @@ const finePointer = matchMedia("(pointer: fine)").matches;
     const strong = document.querySelector("footer strong");
     if (strong) strong.innerHTML = `<span class="logo-mark">&lt;/&gt;</span> ${(c.shortName || "monjur0x0")}`;
     const foot = document.querySelector("footer .center");
-    if (foot) foot.innerHTML = `© <span>${new Date().getFullYear()}</span> ${c.name}. Built with HTML/CSS/JS.`;
+    if (foot) foot.innerHTML = `© <span id="year">${new Date().getFullYear()}</span> ${c.name}. Built with HTML/CSS/JS.`;
   }
   if (c.tagline) { const t = document.getElementById("heroTagline"); if (t) t.textContent = c.tagline; }
   if (c.email) { const e = document.getElementById("contactEmail"); if (e) e.textContent = c.email; }
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
 window.addEventListener("load", () => document.body.classList.add("loaded"));
@@ -41,7 +44,7 @@ setTimeout(() => document.body.classList.add("loaded"), 800); // fallback
 // Typing effect (rotates through all words, incl. reduced-motion fallback)
 (function () {
   const DEFAULT_WORDS = ["Full-Stack Developer", "Security Researcher", "CTF Competitor", "Agentic AI Builder"];
-  const words = (window.SITE_CONFIG && SITE_CONFIG.typedWords && SITE_CONFIG.typedWords.length ? SITE_CONFIG.typedWords : DEFAULT_WORDS);
+  const words = (SITE.typedWords && SITE.typedWords.length ? SITE.typedWords : DEFAULT_WORDS);
   const el = document.getElementById("typed");
   if (!el) return;
   if (reducedMotion) {
@@ -338,7 +341,7 @@ document.getElementById("contactForm").addEventListener("submit", async e => {
     note.textContent = "Please fill in your name, email and message.";
     return;
   }
-  const cfg = window.SITE_CONFIG || {};
+  const cfg = SITE;
   const url = (cfg.supabaseUrl || "").replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
   const key = cfg.supabaseAnonKey || "";
   btn.disabled = true;
