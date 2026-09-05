@@ -127,11 +127,17 @@ body.loaded [data-hero]{animation:fade-up .7s cubic-bezier(.2,.7,.3,1) forwards;
 .socials a:hover{color:var(--green);border-color:var(--green);transform:translateY(-2px)}
 /* icon buttons (GitHub / LinkedIn / Codeforces / Email) */
 .socials a.soc{width:2.6rem;height:2.6rem;border:1px solid var(--bd);border-bottom-style:solid;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:hsl(var(--secondary))}
-.socials a.soc img{width:1.15rem;height:1.15rem;filter:invert(1);opacity:.85}
-.socials a.soc svg{width:1.15rem;height:1.15rem;color:hsl(var(--muted-foreground))}
+.socials a.soc img,.socials a.soc svg.brand{width:1.15rem;height:1.15rem}
+.socials a.soc img{filter:invert(1);opacity:.85}
+.socials a.soc svg.brand{fill:#fff;opacity:.85}
+.socials a.soc svg:not(.brand){color:hsl(var(--muted-foreground))}
 .socials a.soc:hover{border-color:hsl(var(--primary)/.7);box-shadow:0 0 16px hsl(var(--primary)/.3);transform:translateY(-3px)}
 .socials a.soc:hover img{opacity:1;filter:none}
-.socials a.soc:hover svg{color:var(--green)}
+.socials a.soc:hover svg.brand{opacity:1}
+.socials a.soc:hover svg:not(.brand){color:var(--green)}
+.socials a.soc:hover [data-brand="github"]{fill:#F0F6FC}
+.socials a.soc:hover [data-brand="linkedin"]{fill:#0A66C2}
+.socials a.soc:hover [data-brand="codeforces"]{fill:#1F8ACB}
 /* floating orbs */
 .orb{position:absolute;border-radius:50%;border:1px solid hsl(var(--primary)/.35);background:hsl(var(--primary)/.08);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:3;box-shadow:0 8px 30px rgb(0 0 0/.35)}
 .orb-1{width:56px;height:56px;top:-18px;right:12%;animation:float-scattered-1 4s ease-in-out infinite}
@@ -188,9 +194,34 @@ body.loaded [data-hero]{animation:fade-up .7s cubic-bezier(.2,.7,.3,1) forwards;
 .skill:nth-child(2n) .skill-ico{animation-delay:-2s}
 /* tech brand logos */
 .skill-logos{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;min-height:2rem}
-.skill-logos img{width:1.9rem;height:1.9rem;filter:invert(1);opacity:.9;transition:transform .25s,opacity .25s}
-.card:hover .skill-logos img{opacity:1}
-.skill-logos img:hover{transform:translateY(-3px) scale(1.12);filter:none;opacity:1}
+.skill-logos img,.skill-logos svg.brand{width:1.9rem;height:1.9rem;opacity:.9;transition:transform .25s,opacity .25s,fill .25s}
+.skill-logos img{filter:invert(1)}
+.skill-logos svg.brand{fill:#fff}
+.card:hover .skill-logos img,.card:hover .skill-logos svg.brand{opacity:1}
+.skill-logos img:hover,.skill-logos svg.brand:hover{transform:translateY(-3px) scale(1.12)}
+/* true brand colors on hover */
+.skill-logos [data-brand="python"]:hover{fill:#3776AB}
+.skill-logos [data-brand="c"]:hover{fill:#A8B9CC}
+.skill-logos [data-brand="cplusplus"]:hover{fill:#00599C}
+.skill-logos [data-brand="csharp"]:hover{fill:#239120}
+.skill-logos [data-brand="html5"]:hover{fill:#E34F26}
+.skill-logos [data-brand="css3"]:hover{fill:#1572B6}
+.skill-logos [data-brand="javascript"]:hover{fill:#F7DF1E}
+.skill-logos [data-brand="react"]:hover{fill:#61DAFB}
+.skill-logos [data-brand="nodedotjs"]:hover{fill:#339933}
+.skill-logos [data-brand="mysql"]:hover{fill:#4479A1}
+.skill-logos [data-brand="sqlite"]:hover{fill:#0AAADC}
+.skill-logos [data-brand="wireshark"]:hover{fill:#1679A7}
+.skill-logos [data-brand="burpsuite"]:hover{fill:#FF6633}
+.skill-logos [data-brand="metasploit"]:hover{fill:#2A9DB8}
+.skill-logos [data-brand="kalilinux"]:hover{fill:#367BF0}
+.skill-logos [data-brand="langchain"]:hover{fill:#3AA88F}
+.skill-logos [data-brand="openai"]:hover{fill:#10A37C}
+.skill-logos [data-brand="n8n"]:hover{fill:#EA4B71}
+.skill-logos [data-brand="git"]:hover{fill:#F05032}
+.skill-logos [data-brand="github"]:hover{fill:#F0F6FC}
+.skill-logos [data-brand="gnubash"]:hover{fill:#CCCCCC}
+.skill-logos [data-brand="typescript"]:hover{fill:#3178C6}
 /* inline heading / orb icons */
 .h-ico{width:1.25em;height:1.25em;vertical-align:-.22em;margin-right:.35rem;color:var(--green)}
 .orb svg{width:1.4rem;height:1.4rem;color:var(--green)}
