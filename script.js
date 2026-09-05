@@ -322,14 +322,55 @@ document.querySelector(".logo").addEventListener("click", e => {
 document.getElementById("navToggle").onclick = () => document.getElementById("navLinks").classList.toggle("open");
 document.querySelectorAll("#navLinks a").forEach(a => a.onclick = () => document.getElementById("navLinks").classList.remove("open"));
 
-// Contact form (demo: localStorage)
-document.getElementById("contactForm").addEventListener("submit", e => {
+// Contact form -> Supabase (falls back to localStorage when unconfigured)
+document.getElementById("contactForm").addEventListener("submit", async e => {
   e.preventDefault();
-  const fd = new FormData(e.target);
-  const msg = Object.fromEntries(fd.entries());
-  const all = JSON.parse(localStorage.getItem("messages") || "[]");
-  all.push({ ...msg, at: new Date().toISOString() });
-  localStorage.setItem("messages", JSON.stringify(all));
-  document.getElementById("formNote").textContent = "✓ Message saved locally. Check localStorage 'messages'.";
-  e.target.reset();
+  const form = e.target;
+  const note = document.getElementById("formNote");
+  const btn = form.querySelector('button[type="submit"]');
+  const fd = new FormData(form);
+  const msg = {
+    name: (fd.get("name") || "").toString().trim(),
+    email: (fd.get("email") || "").toString().trim(),
+    message: (fd.get("message") || "").toString().trim()
+  };
+  if (!msg.name || !msg.email || !msg.message) {
+    note.textContent = "Please fill in your name, email and message.";
+    return;
+  }
+  const cfg = window.SITE_CONFIG || {};
+  const url = (cfg.supabaseUrl || "").replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
+  const key = cfg.supabaseAnonKey || "";
+  btn.disabled = true;
+  const original = btn.textContent;
+  btn.textContent = "Sending…";
+  try {
+    if (!url || !key) throw new Error("unconfigured");
+    const res = await fetch(`${url}/rest/v1/contact_messages`, {
+      method: "POST",
+      headers: {
+        "apikey": key,
+        "Authorization": `Bearer ${key}`,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(msg)
+    });
+    if (!res.ok) throw new Error(`Supabase responded ${res.status}`);
+    note.textContent = "✓ Message sent. I'll get back to you soon.";
+    form.reset();
+  } catch (err) {
+    if ((err && err.message) === "unconfigured") {
+      const all = JSON.parse(localStorage.getItem("messages") || "[]");
+      all.push({ ...msg, at: new Date().toISOString() });
+      localStorage.setItem("messages", JSON.stringify(all));
+      note.textContent = "Supabase keys not set yet — message saved locally. Add them in config.js to go live.";
+    } else {
+      console.error("Contact form error:", err);
+      note.textContent = "Couldn't send right now. Please email me directly instead.";
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = original;
+  }
 });

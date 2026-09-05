@@ -11,5 +11,9 @@ const SITE_CONFIG = {
   github: "https://github.com/monjur0x",
   linkedin: "https://linkedin.com/in/monjur0x0",
   codeforces: "https://codeforces.com/profile/monjurulh",
+  // Supabase (contact form backend) — paste your project URL + anon key here.
+  // The anon key is public by design; lock it down with the RLS policy in supabase.sql.
+  supabaseUrl: "https://eszoetfivyaevjalbwcg.supabase.co",
+  supabaseAnonKey: "sb_publishable_f04xoi4ztqEEgJ0QxjgrcQ_163BkoLv",
   typedWords: ["Full-Stack Developer", "Security Researcher", "CTF Competitor", "Agentic AI Builder"],
 };
