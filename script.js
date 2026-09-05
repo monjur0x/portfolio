@@ -235,7 +235,12 @@ document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("clic
   io.observe(el);
 })();
 
-// ---- Marquee is a pure CSS loop (two identical groups in HTML); nothing to duplicate ----
+// ---- Marquee is a pure CSS loop (two identical groups in HTML); self-heal stale caches ----
+(function () {
+  const track = document.getElementById("marqueeTrack");
+  if (!track) return;
+  if (track.querySelectorAll(".marquee-group").length < 2) track.innerHTML += track.innerHTML;
+})();
 
 // Mobile nav
 document.getElementById("navToggle").onclick = () => document.getElementById("navLinks").classList.toggle("open");
