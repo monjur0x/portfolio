@@ -61,6 +61,41 @@ setTimeout(() => document.body.classList.add("loaded"), 800); // fallback
   })();
 })();
 
+// ---- Binary rain backdrop (page-wide cyber texture) ----
+(function () {
+  if (reducedMotion) return;
+  const cv = document.getElementById("matrix");
+  if (!cv) return;
+  const ctx = cv.getContext("2d");
+  const GLYPHS = "01";
+  let W, H, cols = [], fs = 15;
+  function resize() {
+    W = cv.width = innerWidth; H = cv.height = innerHeight;
+    const n = Math.ceil(W / 34);
+    cols = Array.from({ length: n }, () => ({
+      y: Math.random() * H,
+      speed: 0.6 + Math.random() * 1.4,
+      blue: Math.random() > 0.85
+    }));
+  }
+  resize(); addEventListener("resize", resize);
+  ctx.font = `${fs}px monospace`;
+  (function draw() {
+    ctx.clearRect(0, 0, W, H);
+    cols.forEach((c, i) => {
+      const ch = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+      const x = i * 34 + 8;
+      ctx.fillStyle = c.blue ? "rgba(96,165,250,.28)" : "rgba(16,185,129,.30)";
+      ctx.fillText(ch, x, c.y);
+      ctx.fillStyle = c.blue ? "rgba(96,165,250,.10)" : "rgba(16,185,129,.10)";
+      ctx.fillText(ch, x, c.y - fs);
+      c.y += c.speed;
+      if (c.y - fs > H && Math.random() > 0.5) c.y = -20;
+    });
+    requestAnimationFrame(draw);
+  })();
+})();
+
 // ---- Custom mouse pointer: dot (instant) + ring (lerped) + glow (slow lerp) ----
 (function () {
   if (!finePointer || reducedMotion) return;

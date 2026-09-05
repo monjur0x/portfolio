@@ -41,6 +41,13 @@ code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:hsl(var(-
 .glow{position:fixed;border-radius:50%;filter:blur(100px);opacity:.18;pointer-events:none;z-index:0}
 .glow-a{width:480px;height:480px;background:hsl(var(--glow-green));top:-140px;left:-140px;animation:float 9s ease-in-out infinite}
 .glow-b{width:520px;height:520px;background:hsl(var(--glow-blue));bottom:-180px;right:-160px;animation:float 11s ease-in-out infinite reverse}
+/* cyber grid backdrop (static texture, page-wide) */
+.cyber-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(hsl(var(--border)/.32) 1px,transparent 1px),linear-gradient(90deg,hsl(var(--border)/.32) 1px,transparent 1px);
+  background-size:50px 50px;
+  -webkit-mask-image:radial-gradient(ellipse 100% 80% at 50% 0%,#000 20%,transparent 78%);
+  mask-image:radial-gradient(ellipse 100% 80% at 50% 0%,#000 20%,transparent 78%)}
+#matrix{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.5}
 #particles{position:absolute;inset:0;width:100%;height:100%;opacity:.7;pointer-events:none}
 #cursorGlow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:1;
   background:radial-gradient(circle,hsl(var(--primary)/.14),transparent 65%);transform:translate(-50%,-50%);left:-500px;top:-500px;filter:blur(10px)}
