@@ -22,7 +22,7 @@ code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:hsl(var(-
 @keyframes float-scattered-2{0%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(-8px,-5px) rotate(-2deg)}50%{transform:translate(5px,-12px) rotate(1deg)}75%{transform:translate(-3px,-8px) rotate(-1deg)}}
 @keyframes float-scattered-3{0%,100%{transform:translate(0,0) rotate(0)}33%{transform:translate(10px,-10px) rotate(3deg)}66%{transform:translate(-5px,-5px) rotate(-2deg)}}
 @keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(var(--marquee-shift,-50%))}}
 @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px hsl(var(--primary)/.35)}50%{box-shadow:0 0 42px hsl(var(--primary)/.6),0 0 70px hsl(var(--primary)/.25)}}
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 @keyframes pop-in{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}

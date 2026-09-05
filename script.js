@@ -235,11 +235,46 @@ document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("clic
   io.observe(el);
 })();
 
-// ---- Marquee is a pure CSS loop (two identical groups in HTML); self-heal stale caches ----
+// ---- Marquee: clone enough copies to cover any screen width, loop by exact measured pixel width ----
 (function () {
   const track = document.getElementById("marqueeTrack");
-  if (!track) return;
-  if (track.querySelectorAll(".marquee-group").length < 2) track.innerHTML += track.innerHTML;
+  const rail = document.querySelector(".marquee");
+  if (!track || !rail) return;
+
+  function setup() {
+    const groups = track.querySelectorAll(".marquee-group");
+    if (!groups.length) return;
+
+    // Reset to a single template group so re-runs (resize/font-load) don't compound clones
+    const template = groups[0];
+    track.innerHTML = "";
+    track.appendChild(template);
+
+    const railWidth = rail.getBoundingClientRect().width;
+    let groupWidth = template.getBoundingClientRect().width;
+    if (!groupWidth) return;
+
+    // Always keep at least 2 copies, and enough extra copies so the visible
+    // rail is covered twice over (covers the widest ultrawide monitors too).
+    while (track.getBoundingClientRect().width < railWidth * 2 + groupWidth) {
+      track.appendChild(template.cloneNode(true));
+    }
+
+    // The loop must shift by exactly ONE group's rendered width (not a fixed
+    // 50%), since the number of copies now varies with screen size.
+    track.style.setProperty("--marquee-shift", `-${groupWidth}px`);
+  }
+
+  setup();
+
+  // Re-measure on resize (debounced) and once webfonts finish loading, since
+  // either can change the group's rendered width.
+  let resizeTimer;
+  addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setup, 150);
+  });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setup);
 })();
 
 // Logo click -> smooth scroll to very top (anchor alone won't fire on a sticky header)
