@@ -242,6 +242,12 @@ document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("clic
   if (track.querySelectorAll(".marquee-group").length < 2) track.innerHTML += track.innerHTML;
 })();
 
+// Logo click -> smooth scroll to very top (anchor alone won't fire on a sticky header)
+document.querySelector(".logo").addEventListener("click", e => {
+  e.preventDefault();
+  scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+});
+
 // Mobile nav
 document.getElementById("navToggle").onclick = () => document.getElementById("navLinks").classList.toggle("open");
 document.querySelectorAll("#navLinks a").forEach(a => a.onclick = () => document.getElementById("navLinks").classList.remove("open"));
