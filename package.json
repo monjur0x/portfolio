@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio of Monjurul Haque Rajun — Full-Stack Developer, Security Researcher, CTF competitor and Agentic AI builder.",
+  "main": "config.js",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Open index.html in browser'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monjur0x/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "security",
+    "ctf",
+    "web-development"
+  ],
+  "author": "Monjurul Haque Rajun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monjur0x/portfolio/issues"
+  },
+  "homepage": "https://github.com/monjur0x/portfolio#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
