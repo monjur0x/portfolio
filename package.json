@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/monjur0x/portfolio#readme",
   "dependencies": {
+    "@libsql/client": "^0.15.15",
     "@vercel/analytics": "^2.0.1"
   }
 }

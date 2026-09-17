@@ -11,9 +11,8 @@ const SITE_CONFIG = {
   github: "https://github.com/monjur0x",
   linkedin: "https://linkedin.com/in/monjur0x0",
   codeforces: "https://codeforces.com/profile/monjurulh",
-  // Supabase (contact form backend) — paste your project URL + anon key here.
-  // The anon key is public by design; lock it down with the RLS policy in supabase.sql.
-  supabaseUrl: "https://eszoetfivyaevjalbwcg.supabase.co",
-  supabaseAnonKey: "sb_publishable_f04xoi4ztqEEgJ0QxjgrcQ_163BkoLv",
+  // Contact form backend — Vercel serverless function writing to Turso (LibSQL).
+  // The function reads TURSO_DATABASE_URL / TURSO_AUTH_TOKEN from env (never client-side).
+  contactEndpoint: "/api/contact",
   typedWords: ["Full-Stack Developer", "Security Researcher", "CTF Competitor", "Agentic AI Builder"],
 };

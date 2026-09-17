@@ -325,7 +325,7 @@ document.querySelector(".logo").addEventListener("click", e => {
 document.getElementById("navToggle").onclick = () => document.getElementById("navLinks").classList.toggle("open");
 document.querySelectorAll("#navLinks a").forEach(a => a.onclick = () => document.getElementById("navLinks").classList.remove("open"));
 
-// Contact form -> Supabase (falls back to localStorage when unconfigured)
+// Contact form -> /api/contact (Vercel function + Turso; falls back to localStorage)
 document.getElementById("contactForm").addEventListener("submit", async e => {
   e.preventDefault();
   const form = e.target;
@@ -341,25 +341,22 @@ document.getElementById("contactForm").addEventListener("submit", async e => {
     note.textContent = "Please fill in your name, email and message.";
     return;
   }
-  const cfg = SITE;
-  const url = (cfg.supabaseUrl || "").replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
-  const key = cfg.supabaseAnonKey || "";
+  const endpoint = (SITE.contactEndpoint || "/api/contact").trim();
   btn.disabled = true;
   const original = btn.textContent;
   btn.textContent = "Sending…";
   try {
-    if (!url || !key) throw new Error("unconfigured");
-    const res = await fetch(`${url}/rest/v1/contact_messages`, {
+    if (!endpoint) throw new Error("unconfigured");
+    const res = await fetch(endpoint, {
       method: "POST",
-      headers: {
-        "apikey": key,
-        "Authorization": `Bearer ${key}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(msg)
     });
-    if (!res.ok) throw new Error(`Supabase responded ${res.status}`);
+    if (!res.ok) {
+      let serverMsg = "";
+      try { serverMsg = (await res.json()).error || ""; } catch {}
+      throw new Error(serverMsg || `Server responded ${res.status}`);
+    }
     note.textContent = "✓ Message sent. I'll get back to you soon.";
     form.reset();
   } catch (err) {
@@ -367,10 +364,10 @@ document.getElementById("contactForm").addEventListener("submit", async e => {
       const all = JSON.parse(localStorage.getItem("messages") || "[]");
       all.push({ ...msg, at: new Date().toISOString() });
       localStorage.setItem("messages", JSON.stringify(all));
-      note.textContent = "Supabase keys not set yet — message saved locally. Add them in config.js to go live.";
+      note.textContent = "Contact endpoint not set yet — message saved locally. Set contactEndpoint in config.js to go live.";
     } else {
       console.error("Contact form error:", err);
-      note.textContent = "Couldn't send right now. Please email me directly instead.";
+      note.textContent = err && err.message ? err.message : "Couldn't send right now. Please email me directly instead.";
     }
   } finally {
     btn.disabled = false;
