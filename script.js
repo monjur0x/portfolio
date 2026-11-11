@@ -28,7 +28,7 @@ const SITE = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG) || {};
     const logo = document.getElementById("logoName"); if (logo) logo.textContent = c.shortName || c.name;
     const hero = document.getElementById("heroName"); if (hero) hero.textContent = c.name;
     const strong = document.querySelector("footer strong");
-    if (strong) strong.innerHTML = `<span class="logo-mark">&lt;/&gt;</span> ${(c.shortName || "monjur0x0")}`;
+    if (strong) strong.innerHTML = `<span class="logo-mark">&lt;/&gt;</span> ${(c.shortName || "monjur0x")}`;
     const foot = document.querySelector("footer .center");
     if (foot) foot.innerHTML = `© <span id="year">${new Date().getFullYear()}</span> ${c.name}. Built with HTML/CSS/JS.`;
   }

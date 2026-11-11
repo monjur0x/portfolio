@@ -137,6 +137,7 @@ body.loaded [data-hero]{animation:fade-up .7s cubic-bezier(.2,.7,.3,1) forwards;
 .socials a.soc:hover svg:not(.brand){color:var(--green)}
 .socials a.soc:hover [data-brand="github"]{fill:#F0F6FC}
 .socials a.soc:hover [data-brand="linkedin"]{fill:#0A66C2}
+.socials a.soc:hover [data-brand="x"]{fill:#E7E9EA}
 .socials a.soc:hover [data-brand="codeforces"]:not(.brand-color){fill:#1F8ACB}
 /* codeforces: white mono by default, official tricolor on hover */
 .cf-swap{display:inline-flex;width:1.15rem;height:1.15rem}

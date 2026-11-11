@@ -1,7 +1,7 @@
 // ★ Monjurul Haque Rajun — edit links here when ready.
 const SITE_CONFIG = {
   name: "Monjurul Haque Rajun",
-  shortName: "monjur0x0",
+  shortName: "monjur0x",
   role: "Full-Stack Developer • Security Researcher • Agentic AI",
   tagline: "CSE undergraduate building security tooling, CTF experience and multi-agent AI systems with Python, React and agentic frameworks.",
   email: "monjurul.r@uttarauniversity.edu.bd",
@@ -9,7 +9,8 @@ const SITE_CONFIG = {
   location: "Dhaka, Bangladesh",
   university: "Uttara University — B.Sc. CSE, Dec 2027",
   github: "https://github.com/monjur0x",
-  linkedin: "https://linkedin.com/in/monjur0x0",
+  linkedin: "https://linkedin.com/in/monjur0x",
+  x: "https://x.com/monjur0x",
   codeforces: "https://codeforces.com/profile/monjurulh",
   // Contact form backend — Vercel serverless function writing to Turso (LibSQL).
   // The function reads TURSO_DATABASE_URL / TURSO_AUTH_TOKEN from env (never client-side).
